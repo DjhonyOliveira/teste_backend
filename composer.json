@@ -1,0 +1,27 @@
+{
+  "name": "DjhonyOliveira/BackEndMaga",
+  "description": "teste vaga backend magazord",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Djonatan",
+      "email": "djonatandeoliveira@hotmail.com",
+      "role": "developer"
+    }
+  ],
+  "config": {
+    "vendor-dir": "vendor"
+  },
+  "autoload": {
+    "psr-4": {
+      "Source\\": "source/"
+    },
+    "files": [
+      "source/config.php"
+    ]
+  },
+  "require": {
+    "coffeecode/datalayer": "^1.0.*"
+  }
+}
