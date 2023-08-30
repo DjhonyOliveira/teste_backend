@@ -1,13 +1,13 @@
 {
-  "name": "DjhonyOliveira/BackEndMaga",
-  "description": "teste vaga backend magazord",
+  "name": "djhonyoliveira/teste_backend",
+  "description": "teste vaga backend",
   "minimum-stability": "stable",
   "license": "MIT",
   "authors": [
     {
       "name": "Djonatan",
       "email": "djonatandeoliveira@hotmail.com",
-      "role": "developer"
+      "role": "Developer"
     }
   ],
   "config": {
@@ -18,10 +18,11 @@
       "Source\\": "source/"
     },
     "files": [
-      "source/config.php"
+      "source/Config.php"
     ]
   },
   "require": {
-    "coffeecode/datalayer": "^1.0.*"
+    "coffeecode/datalayer": "2.0.0",
+    "exp"
   }
 }
