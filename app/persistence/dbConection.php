@@ -1,18 +1,54 @@
 <?php
 
-$host = 'localhost';
-$port = '9090';
-$dbname = 'teste_backend';
-$user = 'postgres';
-$password = 'postgre';
+class persistencia
+{
+    protected $conexao;
+    public function getConnection()
+    {
+        $this->conexao;
+    }
+    function Connect($conexao)
+    {
+        $this->conexao = $conexao;
+    }
 
-$conection = pg_connect("host=$host port=$port dbname=$dbname user=$user password=$password");
+    public function getDb()
+    {
+        $host = getenv('DB_HOST');
+        $port = getenv('DB_PORT');
+        $dbname = getenv('DB_NAME');
+        $user = getenv('DB_USER');
+        $password = getenv('DB_PASSWORD');
 
-if (!$conection) {
-    echo "Erro de conexão " . pg_last_error($conection);
-} else {
-    echo "Conexão estabelecida";
+        $dbConection = "host=$host
+                        port=$port
+                        dbname=$dbname
+                        user=$user
+                        password=$password";
+
+        return $dbConection;
+    }
+
+    public function conect()
+    {
+        $this->setConnect(pg_connect($this->getDb()));
+    }
+
+    public function desconect()
+    {
+        return pg_close($this->getConnection());
+    }
+
+    public function exeQuery($ssql)
+    {
+        $this->conect();
+        $query = pg_exec($this->getConnection(), $ssql);
+
+        $this->desconect();
+
+        return $query;
+    }
+    
 }
-
 
 
