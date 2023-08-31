@@ -48,7 +48,7 @@ class persistencia
 
         return $query;
     }
-    
+
 }
 
 
