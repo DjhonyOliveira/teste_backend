@@ -1,6 +1,7 @@
 <?php
 
-class persistencia
+namespace persistence;
+class Persistencia
 {
     protected $conexao;
     public function getConnection()
